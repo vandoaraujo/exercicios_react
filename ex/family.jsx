@@ -1,9 +1,9 @@
 import React from 'react'
-import Member from './member'
+import { childrenWithProps } from '../utils/reactUtils'
 
 export default props => (
     <div>
         Família
-        { React.cloneElement(props.children, {...props}) }
+        { childrenWithProps(props.children, props) }
     </div>    
 )
