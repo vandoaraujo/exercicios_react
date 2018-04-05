@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+## Vando Araujo
 
 You can use the [editor on GitHub](https://github.com/vandoaraujo/exercicios_react/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
