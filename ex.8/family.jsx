@@ -5,5 +5,6 @@ export default props => (
     <div>
         Família
         { childrenWithProps(props.children, props) }
+        
     </div>    
 )
