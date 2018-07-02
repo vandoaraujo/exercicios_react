@@ -21,7 +21,7 @@ export default class Todo extends Component {
         console.log(this.state.description)
         const description = this.state.description
         axios.post(URL, { description } )
-            .then(resp => this.refresh)
+            .then(resp => this.refresh())
     }
 
     refresh(){
@@ -34,8 +34,8 @@ export default class Todo extends Component {
     }
 
     handleRemove(todo){
-        axios.delete(`${URL}?sort=-createdAt`)
-            .then(resp => this.refresh)
+        axios.delete(`${URL}/${todo._id}`)
+            .then(resp => this.refresh())
     }
 
     render(){
