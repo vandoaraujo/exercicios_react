@@ -1,5 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from './main/app'
+import { combineReducers, createStore } from 'redux'
+import { Provider } from 'react-redux'
+import Field from './field'
 
-ReactDOM.render(<App/>, document.getElementById('app'))
+const reducers = combineReducers({
+    field: ()=> ({ value: 'Opa' })
+})
+
+ReactDOM.render(
+            <Field initialValue='Teste' />
+        ,document.getElementById('app'))
