@@ -1,7 +1,15 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Field from './field'
+//faltam dois imports...verificar...
+import counterReducer from './counterReducer'
+import Counter from './counter'
+
+const reducers = combineReducers ({
+    counter: counterReducer
+})
 
 ReactDOM.render(
-    <Field initialValue='Teste'  />
-    , document.getElementById('app'))
+    <Provider store={createStore(reducers)}>
+        <Counter/>
+    </Provider>
+   , document.getElementById('app'))

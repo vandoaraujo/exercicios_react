@@ -12,6 +12,11 @@ const Counter = props => (
     </div>
 )
 const mapStateToProps = state => ({ counter: state.counter })
+//metodo que faz o mapeamento do mundo do redux para o mundo do react
 const mapDispatchToProps =
-    dispatch => bindActionCreators({ inc, dec, stepChanged }, dispatch)
+    dispatch => bindActionCreators({ 
+        inc,
+        dec,
+        stepChanged
+    }, dispatch)
 export default connect(mapStateToProps, mapDispatchToProps)(Counter)
