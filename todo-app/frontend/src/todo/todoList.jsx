@@ -37,5 +37,7 @@ const TodoList = props => {
 
 }
 //esse todo vem da variavel criada la no redux
+//fazemos um mapeamento do list recebendo os dados do state.todo.list
 const mapStateToProps = state => ({list: state.todo.list})
+//integramos esse componente ao connect atraves da declaracao abaixo...padrão projeto decorator
 export default connect(mapStateToProps)(TodoList)
