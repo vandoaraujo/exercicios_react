@@ -1,5 +1,5 @@
 const INITIAL_STATE = {
-    description: 'Ler Livro',
+    description: 'Ler Livro 2',
     list: [{
         _id: 1,
         description: 'Pagar a fatura do cartão',
@@ -22,7 +22,7 @@ const INITIAL_STATE = {
 //O action.payload virá da action corrente que é a action do todoActions.js
 export default (state = INITIAL_STATE, action) => {
     switch(action.type){
-        case 'DESCRIPTION_CHANGE':
+        case 'DESCRIPTION_CHANGED':
             return { ...state, description: action.payload }
         default:
             return state

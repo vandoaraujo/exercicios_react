@@ -5,8 +5,7 @@ import Grid from '../template/grid'
 import IconButton from '../template/iconButton'
 import { changeDescription } from './todoActions'
 
-const TodoForm = props => {
-
+const TodoForm = props => { 
     const keyHandler = (e) => {
         if(e.key === 'Enter'){
             e.shiftKey ? props.handleSearch() : props.handleAdd()
