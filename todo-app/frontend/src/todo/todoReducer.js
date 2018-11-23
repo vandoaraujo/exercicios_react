@@ -17,6 +17,9 @@ const INITIAL_STATE = {
     }]
 }
 
+//preciso criar a funcao que representa o reducers.
+//Usamos uma aerofunction. a Funcao reducers recebe o estado atual e a nova action.
+//O action.payload virá da action corrente que é a action do todoActions.js
 export default (state = INITIAL_STATE, action) => {
     switch(action.type){
         case 'DESCRIPTION_CHANGE':
