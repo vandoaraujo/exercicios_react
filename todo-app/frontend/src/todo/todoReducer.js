@@ -1,4 +1,6 @@
-const INITIAL_STATE = {
+const INITIAL_STATE = { description: '', list: [] }
+
+/* const INITIAL_STATE = {
     description: 'Ler Livro 2',
     list: [{
         _id: 1,
@@ -15,7 +17,7 @@ const INITIAL_STATE = {
         description: 'Consulta Médica nas terças depois do almoço',
         done: false
     }]
-}
+} */
 
 //preciso criar a funcao que representa o reducers.
 //Usamos uma aerofunction. a Funcao reducers recebe o estado atual e a nova action.
@@ -26,6 +28,8 @@ export default (state = INITIAL_STATE, action) => {
             return { ...state, description: action.payload }
         case 'TODO_SEARCHED':
             return { ...state, list: action.payload.data}
+        case 'TODO_ADDED':
+            return { ...state, description: ''}
         default:
             return state
     }
