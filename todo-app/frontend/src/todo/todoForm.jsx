@@ -41,5 +41,5 @@ const TodoForm = props => {
 const mapStateToProps = state => ({description : state.todo.description})
 //esse cara faz a ligacao de quem realmente dispara a ação com o todoActions.
 const mapDispatchToProps = dispatch =>
-bindActionCreators({ changeDescription }, dispatch)
+    bindActionCreators({ changeDescription }, dispatch)
 export default connect(mapStateToProps, mapDispatchToProps)(TodoForm)
