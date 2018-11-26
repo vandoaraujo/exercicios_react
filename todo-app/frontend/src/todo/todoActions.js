@@ -13,7 +13,7 @@ export const changeDescription = event => ({
 })
 
 //Esse metodo retornará uma promise, logo o dado vindo do request não está preparaado ainda
-//então precisaremos de um middleware.
+//então precisaremos de um middleware. Os dados ainda não estarão 
 export const search = () => {
     const request = axios.get(`${URL}?sort=-createdAt`)
     return {
@@ -22,8 +22,13 @@ export const search = () => {
     }
 }
 
+//Método add recebe como parametro a description 
+//Faço um POST nA URL abaixo passando a descrição.
 export const add = (description) => {
+    //essa sintaxe abaixo já é do ECMA Script 2015
     const request = axios.post(URL, {description})
+    //a versao antiga era assim
+    //const request = axios.post(URL, {description : description})
     return {
         type: 'TODO_ADDED',
         payload : request

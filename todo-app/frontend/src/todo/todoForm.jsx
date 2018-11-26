@@ -12,11 +12,13 @@ class TodoForm extends Component {
         this.keyHandler = this.keyHandler.bind(this)
     }
     // exemplo pedia o metodo componentwillmount.
+    // chamamos o ActionCreator de forma manual.
     componentDidMount(){
         this.props.search()
     }
 
     keyHandler(e) {
+        //extraio esses tres atributos de this.props
         const { add, search, description } = this.props
 
         if(e.key === 'Enter'){
