@@ -5,7 +5,7 @@ const URL = 'http://localhost:3003/api/todos'
 
 /**
  * 
- * @param {Esses metodos sao ActionCreators e espera-se que esses metodos retornem objetos} event 
+ * @param {Esses métodos sao ActionCreators e espera-se que esses metodos retornem objetos} event 
  */
 export const changeDescription = event => ({
     type: 'DESCRIPTION_CHANGED',
@@ -24,7 +24,7 @@ export const search = () => {
 
 //Método add recebe como parametro a description 
 //Faço um POST nA URL abaixo passando a descrição.
-export const add = (description) => {
+/* export const add = (description) => {
     //essa sintaxe abaixo já é do ECMA Script 2015
     //Vamos precisar usar o then para esperar a resposta, senão a lista pode ficar
     //desatualizada
@@ -32,9 +32,26 @@ export const add = (description) => {
     //a versao antiga era assim
     //const request = axios.post(URL, {description : description})
 
-    // Precisamos dos colchetes, para colocar elementos multiplos usando o middleware multi com os colchetes.
+    /**
+     *     const add = async description => {
+     const request = await axios.post(URL, { description });
+     return [{ type: "TODO_ADDED", payload: request }, await search()];
+    };
+       // Precisamos dos colchetes, para colocar elementos multiplos usando o middleware multi com os colchetes.
     // e virgulas entre eles.
     return [
         {type: 'TODO_ADDED', payload : request}, search()
     ]
+} */
+
+//Com o Redux Thunk vc nao retorna mais uma action, mas um método
+export const add = (description) => {
+    // o dispatch será responsavel por enviar suas Actions para os reducers,
+    // então temos na mao quem é responsavel
+    // por disparar os eventos para os reducers.
+    return dispatch => {
+        axios.post(URL, {description})
+            .then(resp => dispatch({ type: 'TODO_ADDED', payload: resp.data }))
+            .then(resp => dispatch(search()))
+    }
 }
