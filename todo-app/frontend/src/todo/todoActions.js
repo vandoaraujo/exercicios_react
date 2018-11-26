@@ -26,11 +26,15 @@ export const search = () => {
 //Faço um POST nA URL abaixo passando a descrição.
 export const add = (description) => {
     //essa sintaxe abaixo já é do ECMA Script 2015
+    //Vamos precisar usar o then para esperar a resposta, senão a lista pode ficar
+    //desatualizada
     const request = axios.post(URL, {description})
     //a versao antiga era assim
     //const request = axios.post(URL, {description : description})
-    return {
-        type: 'TODO_ADDED',
-        payload : request
-    }
+
+    // Precisamos dos colchetes, para colocar elementos multiplos usando o middleware multi com os colchetes.
+    // e virgulas entre eles.
+    return [
+        {type: 'TODO_ADDED', payload : request}, search()
+    ]
 }
