@@ -3,7 +3,7 @@ const express = require('express')
 module.exports = function(server){
     //API
     const router = express.Router()
-    //criando um middleware. Declarando o caminha das APis
+    //criando um middleware. Declarando o caminho das APis
     server.use('/api', router)
 
     //mapeando as rotas - TODO Routes. Ele vai encontrar

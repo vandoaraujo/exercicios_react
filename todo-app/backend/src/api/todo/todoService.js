@@ -7,6 +7,8 @@ Todo.methods(['get','post','put','delete'])
 //com o antigo. o runValidators valida os dados do schema, required...default...
 Todo.updateOptions({new:true, runValidators: true})
 
+console.log(Todo);
+
 //é muito simples criar um serviço...
 //ele já expoe a parte web e o acesso aos dados.
 module.exports = Todo

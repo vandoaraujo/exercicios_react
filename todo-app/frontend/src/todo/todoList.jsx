@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import IconButton from '../template/iconButton'
 import { bindActionCreators } from 'redux'
-import { markAsDone, markAsPending } from './todoActions'
+import { markAsDone, markAsPending, remove } from './todoActions'
 
 const TodoList = props => {
 
@@ -17,7 +17,7 @@ const TodoList = props => {
                     <IconButton style='warning' icon='undo' hide={!todo.done}
                         onClick={() => props.markAsPending(todo)}></IconButton>
                     <IconButton style='danger' icon='trash-o' hide={!todo.done}
-                        onClick={() => props.handleRemove(todo)}></IconButton>
+                        onClick={() => props.remove(todo)}></IconButton>
                 </td>
             </tr>
         ))
@@ -42,6 +42,6 @@ const TodoList = props => {
 //fazemos um mapeamento do list recebendo os dados do state.todo.list
 const mapStateToProps = state => ({list: state.todo.list})
 const mapDispatchToProps = dispatch =>
-    bindActionCreators({ markAsDone, markAsPending}, dispatch)
+    bindActionCreators({ markAsDone, markAsPending, remove}, dispatch)
 //integramos esse componente ao connect atraves da declaracao abaixo...padrão projeto decorator
 export default connect(mapStateToProps, mapDispatchToProps)(TodoList)
