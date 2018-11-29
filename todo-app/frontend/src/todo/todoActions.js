@@ -15,10 +15,12 @@ export const changeDescription = event => ({
 //Esse metodo retornará uma promise, logo o dado vindo do request não está preparaado ainda
 //então precisaremos de um middleware. Os dados ainda não estarão 
 export const search = () => {
-    const request = axios.get(`${URL}?sort=-createdAt`)
-    return {
-        type: 'TODO_SEARCHED',
-        payload : request
+
+    return (dispatch, getState) => {
+        const description = getState().todo.description
+        const search = description ? `&description__regex=/${description}/` : ''
+        const request = axios.get(`${URL}?sort=-createdAt${search}`)
+            .then(resp => dispatch({type: 'TODO_SEARCHED', payload: resp.data}))
     }
 }
 
