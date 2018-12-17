@@ -1,9 +1,11 @@
 const BillingCycle = require('./billingCycle.js')
-const errorHandler = require('../common/errorHandler')
+const errorHandler = require('../common/errorHandler.js')
 
+//Criação dos serviços Web através do Express
 BillingCycle.methods(['get','post','put','delete'])
-BillingCycle.updateOptions({new:true , runValidators: true}) //no noderestful, o update não obriga o preenchimento
-//dos campos, então precisamos informar essa opção para obrigar a validação também no update.
+BillingCycle.updateOptions({new:true , runValidators: true}) //no NODERESTFUL, o update não obriga o preenchimento
+//dos campos, então precisamos informar essa opção para obrigar a validação também no update. O new informa que o
+// objeto atualizado em um put será retornado
 BillingCycle.after('post', errorHandler).after('put', errorHandler)
 
 BillingCycle.route('count', (req, res, next) => {
