@@ -32,3 +32,7 @@ debts[0][status]:PAGO
 debts[1][name]:Condominio
 debts[1][value]:720
 debts[1][status]:AGENDADO
+
+
+DELETE  http://localhost:3003/api/billingCycles/:id
+Usar o botão params

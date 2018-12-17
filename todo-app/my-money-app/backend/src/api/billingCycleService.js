@@ -17,7 +17,16 @@ BillingCycle.route('count', (req, res, next) => {
         }
     })
 })
-
+/**
+ * Para criar uma rota, usamos a seguinte API:
+ * BillingCyle.route(nome da rota)
+ * Os 3 parâmetros são o middleware (req, res, next)
+ * Para fazer a função devemos perguntar.
+ * O que é preciso exportar? Preciso exportar todos os creditos e todos os debitos
+ * E para isso vamos projetar os valores dos creditos e dos debitos, somar os respectivos valores
+ * E agrupar esses valores pelo credito e debito
+ * 
+ */
 BillingCycle.route('summary', (req, res, next) => {
     BillingCycle.aggregate({
         $project: {credit: {$sum: "$credits.value"}, debt: {$sum: "$debts.value"}}
