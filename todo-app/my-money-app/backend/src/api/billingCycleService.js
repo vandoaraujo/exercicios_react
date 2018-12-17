@@ -1,5 +1,5 @@
 const BillingCycle = require('./billingCycle.js')
-const errorHandler = require('../common/errorHandler.js')
+const errorHandler = require('./common/errorHandler.js')
 
 //Criação dos serviços Web através do Express
 BillingCycle.methods(['get','post','put','delete'])
