@@ -2,7 +2,8 @@ const BillingCycle = require('./billingCycle.js')
 const errorHandler = require('../common/errorHandler')
 
 BillingCycle.methods(['get','post','put','delete'])
-BillingCycle.updateOptions({new:true , runValidators: true})
+BillingCycle.updateOptions({new:true , runValidators: true}) //no noderestful, o update não obriga o preenchimento
+//dos campos, então precisamos informar essa opção para obrigar a validação também no update.
 BillingCycle.after('post', errorHandler).after('put', errorHandler)
 
 BillingCycle.route('count', (req, res, next) => {
