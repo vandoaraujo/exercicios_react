@@ -1,3 +1,18 @@
+Documentação: https://docs.mongodb.com/manual/reference/operator/aggregation/group/
+
+Pessoal consegui resolver assim:
+
+- atualizei o mongoose para: mongoose@4.13.7
+
+- adicionei { useMongoClient: true } no arquivo database.js, ficou assim:
+
+module.exports = mongoose.connect('mongodb://localhost/mymoney', { useMongoClient: true }) 
+
+- reiniciei o backend e o sumário apareceu.
+
+https://github.com/Mockgoose/Mockgoose/issues/32
+
+
 name:Janeiro/17
 month:1
 year:2017
