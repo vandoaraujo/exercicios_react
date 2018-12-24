@@ -1,8 +1,11 @@
 http://localhost:3003/api/billingCycles?skip=0&limit=1
 
+Estudo: 
+https://wharley.github.io/criando-apis-incr%C3%ADveis-usando-node-restful/
+
 Paginação
 
-
+https://docs.mongodb.com/manual/reference/operator/aggregation/project/#pipe._S_project
 
 Documentação: https://docs.mongodb.com/manual/reference/operator/aggregation/group/
 
