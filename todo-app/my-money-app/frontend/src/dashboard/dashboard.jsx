@@ -8,16 +8,22 @@ import Content from '../common/template/content'
 import ValueBox from '../common/widget/valueBox'
 import Row from '../common/layout/row'
 
+<<<<<<< HEAD
 class Dashboard extends Component 
 {
     componentDidMount(){
+=======
+class Dashboard extends Component {
+
+    componentWillMount() {
+>>>>>>> e1d54dcf7f083674253b145fb8333bd6d8ec0ff1
         this.props.getSummary()
     }
 
     render() {
         const { credit, debt } = this.props.summary
         return (
-            <div>
+            <div> 
                 <ContentHeader title='Dashboard' small='Versão 1.0' />
                 <Content>
                     <Row>
