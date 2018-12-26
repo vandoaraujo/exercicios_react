@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
+
 import If from '../operator/if'
 import { selectTab } from './tabActions'
 
@@ -17,7 +18,7 @@ class TabHeader extends Component {
                     onClick={() => this.props.selectTab(this.props.target)}
                     data-target={this.props.target}>
                     <i className={`fa fa-${this.props.icon}`}></i>
-                    {this.props.label}
+                        {this.props.label}
                 </a>
                 </li>
             </If>
