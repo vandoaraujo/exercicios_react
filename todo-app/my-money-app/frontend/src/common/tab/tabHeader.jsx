@@ -26,5 +26,6 @@ class TabHeader extends Component {
     }
 }
 const mapStateToProps = state => ({tab : state.tab})
+//Invoca uma action Creator, e após o retorno dessa action será chamado um reducer
 const mapDispatchToProps = dispatch => bindActionCreators({selectTab}, dispatch)
 export default connect(mapStateToProps, mapDispatchToProps)(TabHeader)

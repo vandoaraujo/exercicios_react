@@ -15,7 +15,9 @@ import List from './billingCycleList'
 class BillingCycle extends Component {
 
     componentWillMount() {
+        //estou selecionando sempre a aba tabList para ser exibida
         this.props.selectTab('tabList')
+        //Estou exibindo apenas as duas tabs iniciais (list e create).
         this.props.showTabs('tabList', 'tabCreate')
     }
 
