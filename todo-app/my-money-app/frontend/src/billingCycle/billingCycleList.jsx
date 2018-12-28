@@ -7,6 +7,7 @@ class BillingCycleList extends Component {
 
     componentWillMount() {
         this.props.getList()
+        
     }
 
     renderRows() {
