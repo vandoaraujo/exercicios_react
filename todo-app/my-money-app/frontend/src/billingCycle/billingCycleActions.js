@@ -26,6 +26,10 @@ export function remove(values) {
     return submit(values, 'delete')
 }
 
+export function deleteQuick(values){
+    return submit(values, 'delete')
+}
+
 function submit(values, method) {
     return dispatch => {
         const id = values._id ? values._id : ''
@@ -63,6 +67,7 @@ export function init(){
         showTabs('tabList', 'tabCreate'),
         selectTab('tabList'),
         getList(),
+        //Inicializa o  form com o valor limpo.
         initialize('billingCycleForm', INITIAL_VALUES)
     
         /* resetForm('billingCycleForm'),

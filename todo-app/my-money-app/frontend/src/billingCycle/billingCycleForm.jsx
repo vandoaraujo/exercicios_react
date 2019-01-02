@@ -30,7 +30,13 @@ class BillingCycleForm extends Component {
         )
     }
 }
+//Nas linhas abaixo estamos usando o padrao decorator, primeiro decoro o componente billingCycleForm
+//com o reduxForm, depois faço a associação com o actionCreators e faço a decoração novamente do componente
+//com o connect e o dispatchToProps.
 
+//a tag destroyUnmount é usada porque estamos usando o mesmo form para inclusao e alteração. 
+//Necessitamos dela para manter o form integro. se nao usarmos teremos comportamentos indesejaveis
 BillingCycleForm = reduxForm({form: 'billingCycleForm', destroyOnUnmount:false})(BillingCycleForm)
 const mapDispatchToProps = dispatch => bindActionCreators({init}, dispatch)
+//o mapstatetoprops irá nulo, pois não temos ele e não precisamos
 export default connect(null, mapDispatchToProps)(BillingCycleForm)
