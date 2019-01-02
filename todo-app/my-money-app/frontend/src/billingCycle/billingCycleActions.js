@@ -32,6 +32,7 @@ function submit(values, method) {
             axios[method](`${BASE_URL}/billingCycles/${id}`, values)
                 .then(resp => {
                     toastr.success('Sucesso', 'Operação Realizada com sucesso.')
+                    //quando fazemos dispatchs multiplos, quem irá le-lo será o redux-multi
                     dispatch(init())
                 })
                 .catch(e => {
