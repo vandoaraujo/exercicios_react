@@ -1,5 +1,6 @@
 import React from 'react'
 import ReduxToastr from 'react-redux-toastr'
+//o nome modules foi configurado no webpack.config
 import 'modules/react-redux-toastr/lib/css/react-redux-toastr.css'
 
 export default props => (
