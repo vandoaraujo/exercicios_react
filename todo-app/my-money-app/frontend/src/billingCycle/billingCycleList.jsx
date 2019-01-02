@@ -26,8 +26,6 @@ class BillingCycleList extends Component {
                     <button className='btn btn-danger' onClick={() => this.props.showDelete(bc)}>
                         <i className='fa fa-trash-o'></i>
                     </button>
-                </td>
-                <td>
                     <button className='btn btn-danger' onClick={() => this.props.deleteQuick(bc)}>
                         <i className='fa fa-minus-circle '></i>
                     </button>
