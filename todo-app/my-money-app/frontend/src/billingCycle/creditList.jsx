@@ -6,17 +6,19 @@ import Input from '../common/form/input'
 class CreditList extends Component {
     
     renderRows() {
-        return (
-            <tr>
-                <td><Field name='credits[0].name' component={Input}
+        const list = this.props.list || []
+        return list.map((item, index) => (
+            <tr key={index}>
+                <td><Field name={`credits[${index}].name`} component={Input}
                     placeholder='Informe o nome' readOnly={this.props.readOnly} /></td>
-                <td><Field name='credits[0].value' component={Input}
+                <td><Field name={`credits[${index}].value`} component={Input}
                     placeholder='Informe o valor' readOnly={this.props.readOnly} /></td>
                 <td></td>
             </tr>
-        )
+       ))
     }
-
+    //o método render é obrigatório com um return.
+    /** como estou em um componente de classe tenho que usar o **this** igual como foi feito acima. */
     render() {
         return (
             <Grid cols={this.props.cols}>
@@ -31,6 +33,7 @@ class CreditList extends Component {
                             </tr>
                         </thead>
                         <tbody>
+                            
                             {this.renderRows()}
                         </tbody>
                     </table>

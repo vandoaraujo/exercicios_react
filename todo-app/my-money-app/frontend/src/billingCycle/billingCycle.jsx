@@ -9,8 +9,7 @@ import TabHeader from '../common/tab/tabHeader'
 import TabsContent from '../common/tab/tabsContent'
 import TabsHeader from '../common/tab/tabsHeader'
 import TabContent from '../common/tab/tabContent'
-import { selectTab, showTabs } from '../common/tab/tabActions'
-import { create, update, remove } from './billingCycleActions'
+import { init, create, update, remove } from './billingCycleActions'
 
 import List from './billingCycleList'
 import Form from './billingCycleForm'
@@ -19,9 +18,8 @@ class BillingCycle extends Component {
 
     componentWillMount() {
         //estou selecionando sempre a aba tabList para ser exibida
-        this.props.selectTab('tabList')
         //Estou exibindo apenas as duas tabs iniciais (list e create).
-        this.props.showTabs('tabList', 'tabCreate')
+        this.props.init()
     }
 
     render() {
@@ -60,5 +58,5 @@ class BillingCycle extends Component {
     }
 }
 const mapDispatchToProps = dispatch => bindActionCreators({
-    selectTab, showTabs, create, update, remove}, dispatch)
+    init, create, update, remove}, dispatch)
 export default connect(null, mapDispatchToProps)(BillingCycle)
