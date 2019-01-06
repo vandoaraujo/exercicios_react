@@ -31,7 +31,7 @@ BillingCycle.route('count', (req, res, next) => {
  * E agrupar esses valores pelo credito e debito
  * 
  */
-BillingCycle.route('summary', (req, res, next) => {
+/* BillingCycle.route('summary', (req, res, next) => {
     BillingCycle.aggregate({
         $project: {
             credit: {$sum: "$credits.value"},
@@ -57,6 +57,23 @@ BillingCycle.route('summary', (req, res, next) => {
             res.status(500).json({errors: [error]})
         }else {
             // A resposta é um array, então eu passo o indice zero do result.
+            res.json(result[0] || { credit: 0, debt: 0 })
+        }
+    })
+})
+ */
+
+BillingCycle.route('summary', (req, res, next) => {
+    BillingCycle.aggregate([{
+        $project: {credit: {$sum: "$credits.value"}, debt: {$sum: "$debts.value"}}
+    }, {
+        $group: {_id: null, credit: {$sum: "$credit"}, debt: {$sum: "$debt"}}
+    }, {
+        $project: {_id: 0, credit: 1, debt: 1}
+    }]).exec((error, result) => {
+        if(error) {
+            res.status(500).json({errors: [error]})
+        } else {
             res.json(result[0] || { credit: 0, debt: 0 })
         }
     })
