@@ -11,3 +11,7 @@ button {
 .table-actions {
     width: 100px;
 }
+
+html, body {
+    height:100%;
+}

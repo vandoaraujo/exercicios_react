@@ -10,8 +10,7 @@ import AuthOrApp from './authOrApp'
 export default props => (
 
     <Router history={hashHistory}>
-        <Route path='/' component={AuthOrApp} />
-        <Route path='/' component={App} >
+        <Route path='/' component={AuthOrApp} >
             <IndexRoute component={Dashboard} />
             <Route path='billingCycles' component={BillingCycle} />
         </Route>
