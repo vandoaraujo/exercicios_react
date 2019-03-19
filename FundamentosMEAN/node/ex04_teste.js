@@ -1,0 +1,1 @@
+const glob = require('ex04_global.js')
