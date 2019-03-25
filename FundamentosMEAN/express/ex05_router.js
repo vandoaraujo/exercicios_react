@@ -8,6 +8,7 @@ const router = express.Router()
  e depois passo para o Express.
  É uma mini aplicação que possui todos os
  mapeamentos.
+ É um subgrupo, ou uma mini aplicação...
  */
 router.use((req, res, next) => {
     const init = Date.now()
