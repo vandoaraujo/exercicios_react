@@ -9,7 +9,7 @@ server.route('/clientes')
     .get((req, res) => res.send('Lista de Clientes'))
     .post((req, res) => res.send('Cadastra novo cliente'))
     .put((req, res) => res.send('Altera cliente'))
-    .delete((req, res) => res.send('Deleta novo cliente'))
+    .delete((req, res) => res.send('Deleta cliente'))
 
 //Escutando na porta 3000
 server.listen(3000, () => console.log('Executando...'))
