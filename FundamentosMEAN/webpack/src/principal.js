@@ -1,4 +1,5 @@
 import Pessoa from './pessoa'
+import './modulos/moduloA'
 /**
  * Usamos desse modo pois estamos usando o padrao
  * do ECMA Script
