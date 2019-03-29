@@ -1,5 +1,6 @@
 import Pessoa from './pessoa'
 import './modulos/moduloA'
+import './assets/css/estilo.css'
 /**
  * Usamos desse modo pois estamos usando o padrao
  * do ECMA Script
