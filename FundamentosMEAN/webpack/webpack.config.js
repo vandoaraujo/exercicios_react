@@ -19,8 +19,9 @@ module.exports = {
             use: [
                 MiniCssExtractPlugin.loader,
                 // 'style-loader', //Adiciona CSS a DOM injetando a tag style
-                'css-loader', //interpreta @import, url()...
                 'saas-loader',
+                'css-loader', //interpreta @import, url()...
+                
             ]
         }]
     }

@@ -79,7 +79,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n!(function webpackMissingModule() { var e = new Error(\"Cannot find module \\\"./css/estilo.css\\\"\"); e.code = 'MODULE_NOT_FOUND'; throw e; }());\n!(function webpackMissingModule() { var e = new Error(\"Cannot find module \\\"./scss/index.scss\\\"\"); e.code = 'MODULE_NOT_FOUND'; throw e; }());\n\n\n\n//# sourceURL=webpack:///./src/assets/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n!(function webpackMissingModule() { var e = new Error(\"Cannot find module \\\"./css/estilo.css\\\"\"); e.code = 'MODULE_NOT_FOUND'; throw e; }());\n!(function webpackMissingModule() { var e = new Error(\"Cannot find module \\\"./scss/index.scss\\\"\"); e.code = 'MODULE_NOT_FOUND'; throw e; }());\n\r\n\n\n//# sourceURL=webpack:///./src/assets/index.js?");
 
 /***/ }),
 
@@ -91,7 +91,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n!(function webpackMissingModu
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Pessoa; });\nclass Pessoa{\n    cumprimentar(){\n        return 'Bom dia!'\n    }\n}\n\n/** module.exports = class Pessoa{\n    cumprimentar(){\n        return 'Bom dia!'\n    }\n} */\n\n//# sourceURL=webpack:///./src/pessoa.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Pessoa; });\nclass Pessoa{\r\n    cumprimentar(){\r\n        return 'Bom dia!'\r\n    }\r\n}\r\n\r\n/** module.exports = class Pessoa{\r\n    cumprimentar(){\r\n        return 'Bom dia!'\r\n    }\r\n} */\n\n//# sourceURL=webpack:///./src/pessoa.js?");
 
 /***/ }),
 
@@ -103,7 +103,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _pessoa__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./pessoa */ \"./src/pessoa.js\");\n/* harmony import */ var _assets__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets */ \"./src/assets/index.js\");\n\n// import './modulos/moduloA'\n// import './assets/css/estilo.css'\n\n/**\n * Usamos desse modo pois estamos usando o padrao\n * do ECMA Script\n * \n */\n//const Pessoa = require('./pessoa')\nconst atendente = new _pessoa__WEBPACK_IMPORTED_MODULE_0__[\"default\"]\nconsole.log(atendente.cumprimentar())\n\n//# sourceURL=webpack:///./src/principal.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _pessoa__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./pessoa */ \"./src/pessoa.js\");\n/* harmony import */ var _assets__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets */ \"./src/assets/index.js\");\n\r\n\r\n\r\nconst atendente = new _pessoa__WEBPACK_IMPORTED_MODULE_0__[\"default\"]\r\nconsole.log(atendente.cumprimentar())\n\n//# sourceURL=webpack:///./src/principal.js?");
 
 /***/ })
 
